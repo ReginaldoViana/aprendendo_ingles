@@ -4,9 +4,10 @@ import { PALAVRAS } from './frases-mock'
 import Swal from 'sweetalert2'
 
 @Component({
-  selector: 'app-painel',
-  templateUrl: './painel.component.html',
-  styleUrls: ['./painel.component.css']
+    selector: 'app-painel',
+    templateUrl: './painel.component.html',
+    styleUrls: ['./painel.component.css'],
+    standalone: false
 })
 export class PainelComponent implements OnInit, OnDestroy {
 

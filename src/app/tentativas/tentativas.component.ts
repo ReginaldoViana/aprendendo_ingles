@@ -2,9 +2,10 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Coracao } from '../shared/coracao.model';
 
 @Component({
-  selector: 'app-tentativas',
-  templateUrl: './tentativas.component.html',
-  styleUrls: ['./tentativas.component.css']
+    selector: 'app-tentativas',
+    templateUrl: './tentativas.component.html',
+    styleUrls: ['./tentativas.component.css'],
+    standalone: false
 })
 export class TentativasComponent implements OnInit, OnChanges {
 
