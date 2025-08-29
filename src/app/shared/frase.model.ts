@@ -1,5 +1,3 @@
-export class Frase{
-
-    constructor(public fraseEng:string, public frasePtbr:string){}
-
+export class Palavra {
+    constructor(public palavraEng: string, public palavraPtbr: string) {}
 }
