@@ -32,6 +32,8 @@
     "@angular/language-service": "^20.2.3",
     "@types/jasmine": "~4.3.0",
     "@types/node": "^18.11.9",
+    "angular-eslint": "20.2.0",
+    "eslint": "^9.33.0",
     "jasmine-core": "~4.5.0",
     "jasmine-spec-reporter": "~7.0.0",
     "karma": "~6.4.0",
@@ -40,6 +42,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "ts-node": "~10.9.1",
-    "typescript": "~5.8.3"
+    "typescript": "~5.8.3",
+    "typescript-eslint": "8.40.0"
   }
 }

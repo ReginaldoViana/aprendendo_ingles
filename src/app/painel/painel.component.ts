@@ -1,17 +1,29 @@
-import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy, Input, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Palavra } from '../shared/frase.model'
 import { PALAVRAS } from './frases-mock'
 import Swal from 'sweetalert2'
+import { ProgressoComponent } from '../progresso/progresso.component';
+import { TentativasComponent } from '../tentativas/tentativas.component';
 
 @Component({
     selector: 'app-painel',
     templateUrl: './painel.component.html',
     styleUrls: ['./painel.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [
+        CommonModule,
+        FormsModule,
+        ProgressoComponent,
+        TentativasComponent
+    ]
 })
 export class PainelComponent implements OnInit, OnDestroy {
 
-  public palavras: Palavra[] = PALAVRAS
+  @Input() quantidadePalavras: number = 5;
+  
+  public palavras: Palavra[] = [];
   public instrucao: string = 'Traduza a palavra:'
   public resposta: string = ''
 
@@ -26,7 +38,11 @@ export class PainelComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.atualizaRodada()
+    // Embaralha as palavras e pega apenas a quantidade selecionada
+    this.palavras = PALAVRAS
+      .sort(() => Math.random() - 0.5)
+      .slice(0, this.quantidadePalavras);
+    this.atualizaRodada();
   }
 
   ngOnDestroy(): void{}

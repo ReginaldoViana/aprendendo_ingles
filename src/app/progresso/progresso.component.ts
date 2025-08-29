@@ -1,14 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-progresso',
     templateUrl: './progresso.component.html',
     styleUrls: ['./progresso.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [CommonModule]
 })
-export class ProgressoComponent implements OnInit {
-
-@Input() public progresso:number = 0
+export class ProgressoComponent {
+    @Input() public progresso: number = 0;
 
   constructor() { }
 

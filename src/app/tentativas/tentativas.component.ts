@@ -1,11 +1,13 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Coracao } from '../shared/coracao.model';
 
 @Component({
     selector: 'app-tentativas',
     templateUrl: './tentativas.component.html',
     styleUrls: ['./tentativas.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [CommonModule]
 })
 export class TentativasComponent implements OnInit, OnChanges {
 

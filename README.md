@@ -8,26 +8,36 @@ Este é um jogo educativo onde o usuário precisa traduzir palavras do inglês p
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Angular 16.2.12** - Framework principal
-- **TypeScript 4.9.5** - Linguagem de programação
+- **Angular 20.2.3** - Framework principal com Standalone Components
+- **TypeScript 5.8.3** - Linguagem de programação
 - **Bootstrap 4.4.1** - Framework CSS para estilização
 - **SweetAlert2** - Biblioteca para popups interativos
-- **RxJS** - Biblioteca para programação reativa
+- **RxJS 7.8.2** - Biblioteca para programação reativa
+- **Angular Forms** - Para formulários reativos
 
 ## 🏗️ Arquitetura do Projeto
 
-O projeto segue a arquitetura de componentes do Angular e está organizado da seguinte forma:
+O projeto utiliza a moderna arquitetura de Standalone Components do Angular 16, proporcionando melhor modularização e performance:
 
 ### Componentes
-- **AppComponent** - Componente raiz que gerencia o estado do jogo
+- **AppComponent** - Componente raiz que gerencia o estado do jogo e configurações iniciais
+- **InicioComponent** - Tela inicial para configuração do jogo e dados do jogador
 - **PainelComponent** - Componente principal que controla a lógica do jogo
 - **TopoComponent** - Cabeçalho da aplicação
 - **ProgressoComponent** - Barra de progresso do jogo
 - **TentativasComponent** - Exibe as vidas restantes do jogador
 
-### Modelos
+### Modelos e Interfaces
 - **Palavra** - Interface para as palavras a serem traduzidas
 - **Coracao** - Modelo para o sistema de vidas
+- **Jogador** - Interface para os dados do jogador
+
+### Características da Arquitetura
+- Utiliza Standalone Components para melhor modularização
+- Implementa comunicação entre componentes via Input/Output
+- Gerenciamento de estado no componente raiz
+- Formulários reativos para entrada de dados
+- Injeção de dependências para serviços compartilhados
 
 ### Estrutura de Arquivos
 ```
@@ -44,9 +54,9 @@ src/
 ## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
-- Node.js (v14 ou superior)
-- NPM (v6 ou superior)
-- Angular CLI
+- Node.js (v24.7.0 ou superior)
+- NPM (v11.5.2 ou superior)
+- Angular CLI (v20.2.1 ou superior)
 
 ### Instalação
 1. Clone o repositório
@@ -81,13 +91,25 @@ src/
 
 ## 🎮 Como Jogar
 
-1. O jogo apresentará uma palavra em inglês
-2. Digite a tradução em português no campo de texto
-3. Clique em verificar ou pressione Enter
-4. Você tem 5 tentativas para acertar
-5. O jogo termina quando você:
-   - Acerta todas as palavras (vitória)
+1. Na tela inicial:
+   - Digite seu nome
+   - Escolha quantas palavras deseja aprender (3, 5, 7 ou 10)
+   - Clique em "Começar a Jogar"
+
+2. Durante o jogo:
+   - O sistema apresentará uma palavra em inglês
+   - Digite a tradução em português no campo de texto
+   - Clique em verificar ou pressione Enter
+   - Você tem 5 tentativas para acertar
+   - O progresso é mostrado na barra superior
+
+3. O jogo termina quando você:
+   - Acerta todas as palavras escolhidas (vitória)
    - Perde todas as vidas (derrota)
+
+4. Ao final:
+   - Uma mensagem personalizada com seu nome aparecerá
+   - Você pode escolher jogar novamente com novas configurações
 
 ## ✨ Funcionalidades
 
