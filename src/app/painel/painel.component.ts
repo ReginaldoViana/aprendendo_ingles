@@ -15,7 +15,7 @@ export class PainelComponent implements OnInit, OnDestroy {
   public resposta: string = ''
 
   public rodada: number = 0
-  public palavraAtual: Palavra
+  public palavraAtual!: Palavra
   public progresso: number = 0
   public tentativas: number = 5
 
